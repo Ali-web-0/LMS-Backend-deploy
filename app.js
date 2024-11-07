@@ -5,6 +5,16 @@ const app = express();
 const path = require('path');
 
 const dotenv = require('dotenv');
+
+const { TextEncoder, TextDecoder } = require('util');
+
+if (typeof global.TextEncoder === 'undefined') {
+  global.TextEncoder = TextEncoder;
+}
+
+if (typeof global.TextDecoder === 'undefined') {
+  global.TextDecoder = TextDecoder;
+}
 // config dot env file
 dotenv.config();
 
