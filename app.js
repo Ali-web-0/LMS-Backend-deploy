@@ -23,6 +23,8 @@ app.use(cors());
 app.use(express.json({ type: 'application/*+json' }));
 
 // Connect to mongodb
+mongoose.set('strictQuery', false);
+
 
 mongoose
   .connect(process.env.MONGO_URL, {
